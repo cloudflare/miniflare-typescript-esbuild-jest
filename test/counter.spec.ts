@@ -2,9 +2,11 @@ const { COUNTER } = getMiniflareBindings();
 const id = COUNTER.newUniqueId();
 const stub = COUNTER.get(id);
 
+// Note this is beforeAll, not beforeEach, yet each test still has isolated storage.
+// See https://v2.miniflare.dev/jest.html#isolated-storage for more details.
 beforeAll(async () => {
   const storage = await getMiniflareDurableObjectStorage(id);
-  storage.put("count", 5);
+  await storage.put("count", 5);
 });
 
 test("should increment count", async () => {
@@ -14,6 +16,7 @@ test("should increment count", async () => {
 
 test("should decrement count", async () => {
   const res = await stub.fetch(new Request("http://localhost/decrement"));
+  // Note that the increment from above was automatically "undone", as we expect 4 not 5
   expect(await res.text()).toContain("⬇️ 4");
 });
 
