@@ -30,6 +30,7 @@ try {
     bundle: true,
     sourcemap: true,
     format: "esm",
+    external: ["jest", "@jest"],
     outdir: path.join(__dirname, "dist"),
     outbase: __dirname,
     outExtension: { ".js": ".mjs" },
