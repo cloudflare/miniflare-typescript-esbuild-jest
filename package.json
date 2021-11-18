@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Example project using Miniflare, TypeScript, esbuild and Jest",
   "type": "module",
-  "module": "./dist/index.mjs",
+  "module": "./dist/src/index.mjs",
   "scripts": {
     "build": "node build.js",
     "dev": "miniflare --live-reload --debug",
