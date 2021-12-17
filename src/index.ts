@@ -1,4 +1,9 @@
+import { Registry } from "promjs/registry";
+
+const reg = new Registry();
+const counter = reg.create('counter','test');
 export async function handleRequest(request: Request, env: Bindings) {
+  counter.inc();
   // Match route against pattern /:name/*action
   const url = new URL(request.url);
   const match = /\/(?<name>[^/]+)(?<action>.*)/.exec(url.pathname);
