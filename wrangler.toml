@@ -3,8 +3,8 @@ type = "javascript"
 
 account_id = ""
 workers_dev = true
-route = ""
-zone_id = ""
+# route = ""
+# zone_id = ""
 
 compatibility_date = "2021-11-15"
 compatibility_flags = []
@@ -13,6 +13,10 @@ compatibility_flags = []
 bindings = [
   { name = "COUNTER", class_name = "Counter" }
 ]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["Counter"]
 
 [build]
 command = "npm run build"
