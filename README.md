@@ -7,8 +7,12 @@ This is an example [Cloudflare Workers](https://workers.cloudflare.com/) project
 $ npm install
 # Start local development server with live reload
 $ npm run dev
+# Start remote development server using wrangler
+$ npm run dev:remote
 # Run tests
 $ npm test
 # Run type checking
 $ npm run types:check
+# Deploy using wrangler
+$ npm run deploy
 ```

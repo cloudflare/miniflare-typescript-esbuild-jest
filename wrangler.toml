@@ -1,12 +1,11 @@
 name = "miniflare-typescript-esbuild-jest"
-type = "javascript"
+main = "dist/index.mjs"
 
 account_id = ""
 workers_dev = true
 # route = ""
-# zone_id = ""
 
-compatibility_date = "2021-11-15"
+compatibility_date = "2022-05-28"
 compatibility_flags = []
 
 [durable_objects]
@@ -19,12 +18,9 @@ tag = "v1"
 new_classes = ["Counter"]
 
 [build]
-command = "npm run build"
-
-[build.upload]
-format = "modules"
-dir = "dist"
-main = "./index.mjs"
+command = "node build.js"
 
 [miniflare]
+kv_persist = true
+cache_persist = true
 durable_objects_persist = true
