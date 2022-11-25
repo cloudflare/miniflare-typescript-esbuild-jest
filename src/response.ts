@@ -21,6 +21,7 @@ export function buildResponse(text: string, status = 200) {
           margin-right: 2rem;
         }
         </style>
+        <link rel="icon" href="data:,">
     </head>
     <body>
         <h1>${text}</h1>
