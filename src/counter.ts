@@ -12,11 +12,11 @@ export class Counter implements DurableObject {
     let emoji = "➡️";
     if (pathname === "/increment") {
       // Increment, then store the new value
-      this.state.storage.put("count", ++value);
+      await this.state.storage.put("count", ++value);
       emoji = "⬆️";
     } else if (pathname === "/decrement") {
       // Decrement, then store the new value
-      this.state.storage.put("count", --value);
+      await this.state.storage.put("count", --value);
       emoji = "⬇️";
     } else if (pathname !== "/") {
       // If no route matched, return 404 response
